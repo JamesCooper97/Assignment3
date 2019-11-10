@@ -97,19 +97,19 @@ public class HandTest {
 		
 		hand.addCard(new Card("CLUBS", "TWO"));
 		
-		assertTrue(hand.getNumericalValue2().get(0) == 2);
+		assertTrue(hand.getNumericalValue().get(0) == 2);
 
 		hand.addCard(new Card("HEARTS", "TEN"));
 
-		assertTrue(hand.getNumericalValue2().get(0) == 12);
+		assertTrue(hand.getNumericalValue().get(0) == 12);
 
 		hand.addCard(new Card("HEARTS", "QUEEN"));
 		
-		assertTrue(hand.getNumericalValue2().get(0) == 22);
+		assertTrue(hand.getNumericalValue().get(0) == 22);
 
 		hand.addCard(new Card("SPADES", "FIVE"));
 		
-		assertTrue(hand.getNumericalValue2().get(0) == 27);
+		assertTrue(hand.getNumericalValue().get(0) == 27);
 	}
 	
 	/*
@@ -127,7 +127,7 @@ public class HandTest {
 		
 		hand.addCard(new Card("CLUBS", "ACE"));
 		
-		ArrayList<Integer> values = hand.getNumericalValue2();
+		ArrayList<Integer> values = hand.getNumericalValue();
 		
 		assertTrue(values.size() == 2);
 		
@@ -137,7 +137,7 @@ public class HandTest {
 		
 		hand.addCard(new Card("CLUBS", "KING"));
 
-		values = hand.getNumericalValue2();
+		values = hand.getNumericalValue();
 		
 		assertTrue(values.size() == 2);
 		
@@ -147,7 +147,7 @@ public class HandTest {
 		
 		hand.addCard(new Card("DIAMONDS", "ACE"));
 		
-		values = hand.getNumericalValue2();
+		values = hand.getNumericalValue();
 		
 		assertTrue(values.size() == 2);
 		
@@ -157,7 +157,7 @@ public class HandTest {
 
 		hand.addCard(new Card("DIAMONDS", "SEVEN"));
 		
-		values = hand.getNumericalValue2();
+		values = hand.getNumericalValue();
 		
 		assertTrue(values.size() == 2);
 		

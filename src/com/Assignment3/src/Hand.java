@@ -32,40 +32,6 @@ public class Hand {
 	}
 	
 	public ArrayList<Integer> getNumericalValue (){
-		ArrayList<Integer> numValues = new ArrayList<Integer>();
-		ArrayList<Integer> numericalValues = new ArrayList<Integer>();
-		for (int i = 0; i < hand.size(); i++) {
-			Card card = hand.get(i);
-			numValues.addAll(card.getNumericalValue());
-			
-			if (card.getValue() == "ACE") {
-				if (numericalValues.size() == 0) {
-					numericalValues.add(0,1);
-					numericalValues.add(1,11);
-				}
-				else if (numericalValues.size() > 0) {
-					numericalValues.add(numericalValues.get(numericalValues.size()-1)+1);
-					for (int j = 0; j < numericalValues.size()-1; j++) {
-						numericalValues.set(j, numericalValues.get(j)+11);
-					}
-				}
-			}
-			else {
-				if (numericalValues.size() == 0) {
-					numericalValues.add(numValues.get(0));
-				}
-				else {
-					for (int j = 0; j < numericalValues.size(); j++) {
-						numericalValues.set(j, numericalValues.get(j)+numValues.get(0));
-					}
-				}
-			}
-		}
-		return numericalValues;
-
-	}
-	
-	public ArrayList<Integer> getNumericalValue2() {
 		System.out.println("This is the current hand size " + getHandSize());
 		Card card = getCard(cardNumber);
 		ArrayList<Integer> cardValue = card.getNumericalValue();
@@ -88,8 +54,15 @@ public class Hand {
 			}
 		}
 		
+		ArrayList<Integer> firstLast = new ArrayList<Integer>();
+		
+		firstLast.add(numericalValue.get(0));
+		firstLast.add(numericalValue.get(numericalValue.size()-1));
+		
 		cardNumber++;
 		System.out.println("The current list" + numericalValue);
-		return numericalValue;
+		return firstLast;
+
 	}
+	
 }
