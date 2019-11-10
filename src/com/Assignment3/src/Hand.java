@@ -79,9 +79,8 @@ public class Hand {
 			int initialNumericValueLength = numericalValue.size();
 			for (int i = 0; i < initialNumericValueLength; i++) {
 				if (cardValue.size()>1) {
-					
-					numericalValue.set(i, numericalValue.get(i) + cardValue.get(0));
 					numericalValue.add(numericalValue.get(i) + cardValue.get(1));
+					numericalValue.set(i, numericalValue.get(i) + cardValue.get(0));
 				} else {
 					System.out.println("I am in the adding section");
 					numericalValue.set(i, numericalValue.get(i) + cardValue.get(0));
